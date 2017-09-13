@@ -1,0 +1,460 @@
+body {
+    color: #8f8f8f;
+    font: 12px Tahoma, sans-serif;
+    background-color: #f8f8f8;
+    border-top: 5px solid #7e7e7e;
+    margin: 0;
+}
+input[type="text"] {
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    height: 30px;
+    color: #b2b2b2;
+    padding: 0 10px;
+    vertical-align: top;
+}
+button {
+    color: #fff;
+    background-color: #29c5e6;
+    border: none;
+    height: 32px;
+    font-family: 'Oswald', sans-serif;
+}
+p {
+    margin: 20px 0;
+}
+#wrapper {
+    max-width: 960px;
+    margin: auto;
+
+}
+header {
+    padding: 20px 0;
+}
+form[name="search"] {
+    float: right;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-position: inside;
+    font: 14px 'Oswald', sans-serif;
+    padding: 10px;
+}
+
+.top-menu li {
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 0;
+}
+
+.top-menu li.active {
+    background: #29c5e6;
+    color: #fff;
+}
+
+.top-menu a {
+    color: #b2b2b2;
+}
+
+
+h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: 40px/40px 'Oswald', sans-serif;
+    background: url(https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg);
+    margin: 0;
+    padding: 0 10px;
+}
+footer {
+    background: #7e7e7e;
+    color: #dbdbdb;
+    font-size: 11px;
+}
+
+#footer {
+    max-width: 960px;
+    margin: auto;
+    padding: 10px 0;
+    height: 90px;
+    margin-top: 100px;
+
+}
+#footerForClient{
+    max-width: 960px;
+    margin: auto;
+    padding: 10px 0;
+    height: 90px;
+    margin-top: 400px;
+
+}
+#sitemap {
+    width: 350px;
+    float: left;
+    margin-left: 100px;
+    padding-right: 150px;
+}
+
+#sitemap div {
+    display: inline-block;
+}
+
+#sitemap div + div {
+    margin-left: 40px;
+}
+
+
+
+#footer-logo {
+    float: right;
+    margin-top: 20px;
+    font-size: 10px;
+    text-align: right;
+}
+#social {
+    float: left;
+    margin-left: 20px;
+    width: 130px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background: url(https://github.com/Mirantus/whitesquare-native/blob/master/www/images/social.png?raw=true) no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icon-small  {
+    width: 16px;
+    height: 16px;
+    background: url(https://github.com/Mirantus/whitesquare-native/blob/master/www/images/social-small.png?raw=true) no-repeat;
+    display: inline-block;
+    margin: 5px 6px 0 0;
+}
+
+.twitter {
+    background-position: 0 0;
+}
+
+.facebook {
+    background-position: -30px 0;
+}
+
+.google-plus {
+    background-position: -60px 0;
+}
+
+.vimeo {
+    background-position: 0 0;
+}
+
+.youtube {
+    background-position: -16px 0;
+}
+
+.flickr {
+    background-position: -32px 0;
+}
+
+.instagram {
+    background-position: -48px 0;
+}
+
+.rss {
+    background-position: -64px 0;
+}
+.team-row{
+    display: inline-block;
+    padding-left: 100px;
+}
+figure figcaption {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+figure div {
+    font-size: 14px;
+    color: #29c5e6;
+}
+
+.team-row figure {
+    margin-top: 20px;
+}
+
+.team-row figure + figure {
+    margin-left: 43px;
+}
+.form-1 {
+    /* Размер и положение */
+    width: 250px;
+    /*margin: 60px auto 30px;*/
+    margin-top: 100px;
+    margin-left: 500px;
+    margin-bottom: -50px;
+    padding: 10px;
+    position: relative; /* For the submit button positioning */
+
+    /* Styles */
+    box-shadow:
+            0 0 1px rgba(0, 0, 0, 0.3),
+            0 3px 7px rgba(0, 0, 0, 0.3),
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    background: linear-gradient(#eeefef, #ffffff 10%);
+}
+
+.form-1 .field {
+    position: relative; /* For the icon positioning */
+}
+.form-1 .field i {
+    /* Size and position */
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    height: 20px;
+    width: 36px;
+
+    /* Line */
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.7);
+
+    /* Styles */
+    color: #777777;
+    text-align: center;
+    line-height: 42px;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+}
+.form-1 input[type=text],
+.form-1 input[type=password] {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+
+    /* Size and position */
+    width: 100%;
+    padding: 10px 18px 10px 45px;
+
+    /* Styles */
+    border: none; /* Remove the default border */
+    box-shadow:
+            inset 0 0 5px rgba(0,0,0,0.1),
+            inset 0 3px 2px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    background: #f9f9f9;
+    color: #777;
+    transition: color 0.3s ease-out;
+}
+
+.form-1 input[type=text] {
+    margin-bottom: 10px;
+}
+.form-1 input[type=text]:hover ~ i,
+.form-1 input[type=password]:hover ~ i {
+    color: #52cfeb;
+}
+
+.form-1 input[type=text]:focus ~ i,
+.form-1 input[type=password]:focus ~ i {
+    color: #42A2BC;
+}
+
+.form-1 input[type=text]:focus,
+.form-1 input[type=password]:focus,
+.form-1 button[type=submit]:focus {
+    outline: none;
+}
+.form-1 .submit {
+    /* Size and position */
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 17px;
+    right: -25px;
+    padding: 10px;
+    z-index: 2;
+
+    /* Styles */
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow:
+            0 0 2px rgba(0,0,0,0.1),
+            0 3px 2px rgba(0,0,0,0.1),
+            inset 0 -3px 2px rgba(0,0,0,0.2);
+}
+.form-1 .submit:after {
+    /* Size and position */
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -2px;
+    left: 30px;
+
+    /* Styles */
+    background: #ffffff;
+
+    /* Other masks trick */
+}
+.form-1 button {
+    /* Size and position */
+    width: 100%;
+    height: 100%;
+    margin-top: -1px;
+
+    /* Icon styles */
+    font-size: 1.4em;
+    line-height: 1.75;
+    color: white;
+
+    /* Styles */
+    border: none; /* Remove the default border */
+    border-radius: inherit;
+    background: linear-gradient(#52cfeb, #42A2BC);
+    box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.3),
+            0 1px 2px rgba(0,0,0,0.35),
+            inset 0 3px 2px rgba(255,255,255,0.2),
+            inset 0 -3px 2px rgba(0,0,0,0.1);
+
+    cursor: pointer;
+}
+.form-1 button:hover,
+.form-1 button[type=submit]:focus {
+    background: #52cfeb;
+    transition: all 0.3s ease-out;
+}
+
+.form-1 button:active {
+    background: #42A2BC;
+    box-shadow:
+            inset 0 0 5px rgba(0,0,0,0.3),
+            inset 0 3px 4px rgba(0,0,0,0.3);
+}
+
+.aside-menu li {
+    width: 15%;
+    font-weight: 300;
+    list-style-type: square;
+    border-top: 1px solid #e7e7e7;
+}
+
+.aside-menu li:first-child {
+    border: none;
+}
+
+.aside-menu li.active {
+    color: #29c5e6;
+}
+.aside-menu li.active a {
+    color: #29c5e6;
+}
+
+.aside-menu a {
+    color: #8f8f8f;
+}
+.contract {
+    margin-left: 400px;
+   margin-bottom: 400px;
+    margin-top: -170px;
+}
+.clientContent{
+    margin-left: 300px;
+    margin-top: -130px;
+    margin-bottom: 300px;
+    width: 80%;
+}
+.adminContent{
+    margin-left: 300px;
+    margin-top: -230px;
+    margin-bottom: 25%;
+    width: 80%;
+    height: auto;
+
+}
+.table{
+    border: 3px deepskyblue;
+}
+td{
+    border: 3px deepskyblue;
+}
+
+.tariffContainer {
+    padding-left: 20px;
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.tariffContainer div{
+    font-size:20px
+
+}
+
+.tariffContainer:not(:first-child){
+    border-left: solid #8f8f8f;
+}
+
+
+
+.clientList table{
+    border-collapse: separate;
+}
+.clientList td {
+    padding-left: 20px;
+    padding: 10px;
+}
+
+#getFoundContractForm{
+    position: relative;
+    right: -10%;
+    top: 15%;
+    margin-right: 500px;
+    margin-left: -10px;
+}
+.contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
+.contact_form ul {
+    width:750px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+.contact_form li{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+.contact_form label {
+    width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+.contact_form input {
+    height:20px;
+    width:220px;
+    padding:5px 8px;
+}
+.contact_form textarea {padding:8px; width:300px;}
+
+#addOption{
+    height: auto;
+
+}
+.addOption{
+    margin-top: 30px;
+}
