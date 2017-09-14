@@ -7,7 +7,7 @@
 
             <c:forEach items="${tariffOptions}" var="tariffOption">
                 <div class="col-md-4" style="width: 300px;">
-                    <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+                    <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100" style="width: 299px">
                         <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
                         <h3>${tariffOption.type}</h3>
                         <div class="divider clearfix"></div>

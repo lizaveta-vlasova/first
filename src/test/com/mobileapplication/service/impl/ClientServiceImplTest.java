@@ -38,7 +38,7 @@ public class ClientServiceImplTest {
 
         when(this.clientDao.findAll()).thenReturn(clientList);
         when(this.clientDao.getClientById(1)).thenReturn(client);
-        //doNothing().when(this.clientDao).saveClient(client);
+        doNothing().when(this.clientDao).saveClient(client);
 
     }
 
@@ -65,13 +65,13 @@ public class ClientServiceImplTest {
         verify(clientDao).getClientById(expectedClient.getId());
     }
 
-    /*@Test
+    @Test
     public void testSaveClient() throws Exception {
         Client expectedClient = new Client();
 
         clientService.saveClient(expectedClient);
 
         verify(clientDao).saveClient(expectedClient);
-    }*/
+    }
 
 }

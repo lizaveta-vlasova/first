@@ -26,7 +26,7 @@
                         <button value="tariffId" style="width: 172px" class="btn btn-info" onclick="showTariffChangeConfirmation(${tariff.id})">Сменить тариф</button>
                     </c:otherwise>
                 </c:choose>
-                        <button class="btn btn-info" href="" style="margin-top: 10px; width: 172px">Подробнее о тарифе</button>
+
             </div>
 
         </div>

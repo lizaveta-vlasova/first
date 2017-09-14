@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div>
-    <h2>Вы выбрали опцию ${currentOption.type}</h2>
+    <h3 style="font-family: serif; text-align: center">Вы выбрали опцию ${currentOption.type}</h3>
     <div class="flex-container" id="flex-container-remove-Option">
         <%-- <div class="row">--%>
         <c:if test="${!empty optionList}">
@@ -17,7 +17,7 @@
                                     <c:choose>
 
                                     <c:when test="${currentOption.optionId == option.optionId}">
-                                        <button onclick="" id="currentTariff" class="btn btn-outlined btn-info" style="width: 75%">Выбранная опция</button>
+                                        <button onclick="" id="currentTariff" class="btn btn-outlined btn-info" style="width: 226px">Выбранная опция</button>
                                     </c:when>
                                         <c:when test="${currentOption.incompatibleOptions.contains(option)}">
                                             <button onclick="getCompatible(${option.optionId}, ${currentOption.optionId})" id="currentTariff" class="btn btn-outlined btn-info" style="width: 75%">Несовместимая</button>

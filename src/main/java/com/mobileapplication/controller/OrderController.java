@@ -1,6 +1,7 @@
 package com.mobileapplication.controller;
 
 //import com.mobileapplication.domain.Order;
+
 import com.mobileapplication.domain.Order;
 import com.mobileapplication.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,22 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    /**
+     * return page for choose services
+     *
+     * @return list of services
+     */
     @RequestMapping(path = "/services", method = RequestMethod.GET)
     public String services() {
         return "services";
     }
 
+    /**
+     * add order to bucket
+     *
+     * @param order
+     * @return redirect to page with services
+     */
     @RequestMapping(path = "/order")
     public String start(@ModelAttribute("order") String order) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -40,16 +52,22 @@ public class OrderController {
         orderService.saveOrder(order1);
 
         return "redirect:/services";
-        // return null;
+
     }
-    //метод отправляет в корзину с товарами
+
+    /**
+     * return page with current orders
+     *
+     * @param model
+     * @return bucket with list of orders
+     */
     @RequestMapping(path = "/order/bucket")
     public String bucket(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         WebAuthenticationDetails authDetails = (WebAuthenticationDetails) auth.getDetails();
         String sessionId = authDetails.getSessionId();
         List<Order> orderList = orderService.findOrdersBySessionId(sessionId);
-        if (orderList==null) {
+        if (orderList == null) {
             return "client/partials/emptyBucket";
         } else {
             model.addAttribute("order", orderList);
@@ -57,7 +75,14 @@ public class OrderController {
 
         }
     }
-    //перенаправляет на страницу для выбора авторизации
+
+    /**
+     * if user has login, page redirect to /login
+     *
+     * @param orderId
+     * @param model
+     * @return login form
+     */
     @RequestMapping(path = "/order/sendToAdmin/{orderId}")
     public String sendToAdmin(@PathVariable("orderId") Integer orderId,
                               Model model) {
@@ -69,30 +94,50 @@ public class OrderController {
         return "chooseRole";
 
     }
+
+    /**
+     * user add order to bucket
+     *
+     * @param orderId
+     * @return redirect to the same page
+     */
     @RequestMapping(path = "order/addOrderByUser/{orderId}")
-    public String addOrderByUser(@PathVariable ("orderId") Integer orderId){
-        return "redirect:clientAccount/bucket/"+orderId;
+    public String addOrderByUser(@PathVariable("orderId") Integer orderId) {
+        return "redirect:clientAccount/bucket/" + orderId;
     }
+
+    /**
+     * if user doesn't have login, return input form
+     *
+     * @param orderId
+     * @param model
+     * @return input form for client information
+     */
     @RequestMapping(path = "order/addOrderFromAnonymous/{orderId}")
-    public String addOrderByAnonymous(@PathVariable ("orderId") Integer orderId,
-                                      Model model){
+    public String addOrderByAnonymous(@PathVariable("orderId") Integer orderId,
+                                      Model model) {
         model.addAttribute("orderID", orderId);
         return "formToOrder";
     }
+
+    /**
+     * save anonnymous information
+     *
+     * @param client
+     * @return redirect to bucket page
+     */
     @RequestMapping(path = "/order/clientContactInfo/{client}")
-    public String getClientAnonInfo(String client){
+    public String getClientAnonInfo(String client) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         WebAuthenticationDetails authDetails = (WebAuthenticationDetails) auth.getDetails();
         String sessionId = authDetails.getSessionId();
         List<Order> orderList = orderService.findOrdersBySessionId(sessionId);
-       for(Order order: orderList){
-           order.setClient(client);
-           order.setBucket(1);
-           order.setStatus("в работе");
-           orderService.update(order);
-       }
-        //orderList.setClient(client);
-      //orderService.update(order);
-      return "redirect:/order/bucket";
+        for (Order order : orderList) {
+            order.setClient(client);
+            order.setBucket(1);
+            order.setStatus("в работе");
+            orderService.update(order);
+        }
+        return "redirect:/order/bucket";
     }
 }

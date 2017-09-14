@@ -71,15 +71,7 @@ public class ContractServiceImplTest {
         verify(contractDao).update(expectedContract);
 
     }
-    /*Test
-    public void testAddOptionByContractId() throws Exception{
-        Contract contract = new Contract();
-        Option option = new Option();
-        contract.setId(1);
-        option.setOptionId(1);
-        contractService.addOptionByContractId(option.getOptionId(), contract.getId());
-        verify(contractDao).save(contract);
-    }*/
+
     @Test
     public void testUserBlocked(){
         Contract contract = new Contract();

@@ -2,7 +2,7 @@ package com.mobileapplication.controller;
 
 import com.mobileapplication.domain.*;
 import com.mobileapplication.service.*;
-import org.apache.xpath.operations.Or;
+import com.mobileapplication.service.impl.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -221,8 +221,9 @@ public class ClientController {
         contractService.userUnblocked(currentContract);
         return "redirect:/clientAccount/" + contractId;
     }
+
     @RequestMapping("clientAccount/bucket/{clientId}")
-    public String clientAccountBucket(Model model, @PathVariable ("clientId") Integer clientId) {
+    public String clientAccountBucket(Model model, @PathVariable("clientId") Integer clientId) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         WebAuthenticationDetails authDetails = (WebAuthenticationDetails) auth.getDetails();
         String sessionId = authDetails.getSessionId();
@@ -235,14 +236,15 @@ public class ClientController {
             return "client/partials/bucket";
         }
     }
+
     @RequestMapping(path = "/clientAccount/addOrder/{clientId}")
-    public String addOrderFromUserProfile(@PathVariable ("clientId") Integer clientId){
+    public String addOrderFromUserProfile(@PathVariable("clientId") Integer clientId) {
         Client currentClient = clientService.getClientById(clientId);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         WebAuthenticationDetails authDetails = (WebAuthenticationDetails) auth.getDetails();
         String sessionId = authDetails.getSessionId();
         List<Order> orderList = orderService.findOrdersBySessionId(sessionId);
-        for(Order order: orderList){
+        for (Order order : orderList) {
             order.setStatus("в работе");
             order.setBucket(1);
             order.setClient(currentClient.getEmail());
@@ -252,9 +254,10 @@ public class ClientController {
         orderService.update(order);*/
         return "redirect:/clientAccount/chooseContract";
     }
+
     @RequestMapping(path = "/clientAccount/orders/{clientId}")
-    public String orders(Model model, @PathVariable ("clientId") Integer clientId){
-        List<Order> orderList= orderService.getOrdersByEmail(clientService.getClientById(clientId).getEmail());
+    public String orders(Model model, @PathVariable("clientId") Integer clientId) {
+        List<Order> orderList = orderService.getOrdersByEmail(clientService.getClientById(clientId).getEmail());
         model.addAttribute("orderList", orderList);
         return "client/partials/orders";
     }

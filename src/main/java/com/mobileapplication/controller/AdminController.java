@@ -1,7 +1,6 @@
 package com.mobileapplication.controller;
 
 import com.mobileapplication.domain.*;
-import com.mobileapplication.dto.ClientDTO;
 import com.mobileapplication.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -734,7 +733,7 @@ public class AdminController {
 
     @RequestMapping(value = "/adminAccount/updateClientInformation/{clientId}")
     public String updateClientInformation(@ModelAttribute("client") Client client,
-                                          @PathVariable ("clientId") Integer clientId) {
+                                          @PathVariable("clientId") Integer clientId) {
         String salt = BCrypt.gensalt();
         String hashed_password = BCrypt.hashpw(client.getPassword(), salt);
         client.setPassword(hashed_password);
@@ -742,25 +741,29 @@ public class AdminController {
         clientService.updateClientInformation(client);
         return "redirect:/adminAccount/clientList";
     }
+
     @RequestMapping(path = "/adminAccount/deleteClient/{clientId}")
-    public String deleteClient(@PathVariable ("clientId") Integer clientId){
+    public String deleteClient(@PathVariable("clientId") Integer clientId) {
         Client client = clientService.getClientById(clientId);
         clientService.deleteClient(client);
         return "redirect:/adminAccount/clientList";
     }
+
     @RequestMapping(path = "/adminAccount/orderList")
     public String orderList(Model model) {
         model.addAttribute("orderList", orderService.orderList());
         return "admin/partials/orderList";
     }
+
     @RequestMapping(path = "/adminAccount/deleteOrder/{orderId}")
-    public String deleteOrder(@PathVariable ("orderId") Integer orderId){
+    public String deleteOrder(@PathVariable("orderId") Integer orderId) {
         Order order = orderService.getOrderById(orderId);
         orderService.deleteOrder(order);
         return "redirect:/adminAccount/orderList";
     }
+
     @RequestMapping(path = "/adminAccount/changeOrderStatus/{orderId}")
-    public String changeOrderStatus(@PathVariable ("orderId") Integer orderId){
+    public String changeOrderStatus(@PathVariable("orderId") Integer orderId) {
         Order order = orderService.getOrderById(orderId);
         order.setStatus("выполнен");
         orderService.update(order);

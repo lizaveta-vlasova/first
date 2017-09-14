@@ -1,4 +1,4 @@
-package com.mobileapplication.service;
+package com.mobileapplication.service.impl;
 
 
 import com.mobileapplication.dao.ClientDao;
