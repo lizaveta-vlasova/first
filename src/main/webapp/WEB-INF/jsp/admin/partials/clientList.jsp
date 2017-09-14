@@ -7,13 +7,13 @@
 
     <table class="table table-striped" id="clientList">
         <thead style="font-family: serif">
-        <th style="text-align: center;" >ID</th>
-        <th style="text-align: center;">ИМЯ</th>
-        <th style="text-align: center;">ФАМИЛИЯ</th>
-        <th style="text-align: center;">ДАТА РОЖДЕНИЯ</th>
-        <th style="text-align: center;">EMAIL</th>
-        <th style="text-align: center;">ПАСПОРТ</th>
-        <th style="text-align: center;">ПОДКЛЮЧЕННЫЕ НОМЕРА</th>
+        <th style="text-align: center; font-size: medium" >ID</th>
+        <th style="text-align: center; font-size: medium">ИМЯ</th>
+        <th style="text-align: center; font-size: medium">ФАМИЛИЯ</th>
+        <th style="text-align: center; font-size: medium">ДАТА РОЖДЕНИЯ</th>
+        <th style="text-align: center; font-size: medium">EMAIL</th>
+        <th style="text-align: center; font-size: medium">ПАСПОРТ</th>
+        <th style="text-align: center; padding-left: 44px; font-family: serif; font-size: medium">ПОДКЛЮЧЕННЫЕ НОМЕРА</th>
         <th style="text-align: center;"></th>
         </thead>
         <tbody>

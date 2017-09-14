@@ -142,7 +142,7 @@
                         <h3 style="font-family: serif; text-align: center; margin-left: -160px"> Вы выбрали контракт для номера <b>${contract.number}</b></h3>
                         <c:choose>
                             <c:when test="${isContractBlockedByAdmin == true}">
-                                <h3 style="text-align: center; font-family: serif" id="numberBlock">Номер заблокирован администратором.</h3>
+                                <h3 style="text-align: center; font-family: serif; margin-left: -18%" id="numberBlock">Номер заблокирован администратором.</h3>
                             </c:when>
                             <c:when test="${isContractBlockedByUser == true}">
                                 <h3 style="text-align: center; font-family: serif" id="numberBlock">Номер заблокирован.</h3>

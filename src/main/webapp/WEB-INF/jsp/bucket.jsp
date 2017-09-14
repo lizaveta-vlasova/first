@@ -43,11 +43,11 @@
 
         <nav>
             <ul>
-                <li><a href="about.html">О компании</a></li>
-                <li><a href="services.html">Сервисы</a></li>
-                <li><a href="work.html">Корпоративным клиентам</a></li>
+                <li><a href="/">О компании</a></li>
+                <li><a href="/services">Сервисы</a></li>
+                <li><a href="#">Корпоративным клиентам</a></li>
                 <li><a href="#">Новости</a></li>
-                <li><a href="contact.html">Корзина</a></li>
+                <li><a href="/order/bucket">Корзина</a></li>
                 <li><a href="/loginForm">Личный кабинет</a></li>
             </ul>
         </nav>
@@ -59,19 +59,32 @@
 <!--  stat page title  -->
 <section class="page_title">
     <div class="wrapper" id="addContent">
-        <c:choose>
-            <c:when test="${order==null}">
-                <h3>Корзина пуста</h3>
-            </c:when>
-            <c:otherwise>
-                <h3>Вы добавили в корзину следующие услуги:</h3>
-                <c:forEach items="${order}" var="order">
-                    <p style="margin-top: 3%">${order.description}         <button class="btn btn-warning"  onclick="sendOrderToAdmin(${order.id})" style="margin-left: 6%">Оформить заявку</button>
-                    </p>
-                </c:forEach>
 
-                </c:otherwise>
-        </c:choose>
+
+                <h3 style="margin-top: -6%; font-family: serif">Вы добавили в корзину следующие услуги:</h3>
+        <div id="clientChooseContract" style="width: 60%; margin-left: 18%">
+                <c:forEach items="${order}" var="order">
+                   <%-- <p style="margin-top: 3%"><div>${order.description}</div> <button class="btn btn-warning"  onclick="sendOrderToAdmin(${order.id})" style="margin-left: 6%">Оформить заявку</button>
+                    </p>--%>
+                    <c:if test="${order.bucket==0}">
+                    <div class="col-md-3 col-sm-6" style="width: 45%; margin-top: 20px; margin-left: 5%">
+                        <div class="serviceBox1">
+                            <div class="service-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+
+                            <div class="service-content">
+                                <h3 class="title">${order.description} </h3>
+                            </div>
+                            <div>
+                                <button class="btn btn-warning"  onclick="sendOrderToAdmin(${order.id})" style="margin-left: 6%">Оформить заявку</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    </c:if>
+                </c:forEach>
+        </div>
 
     </div>
 
@@ -83,43 +96,7 @@
 
 <section class="process">
     <div class="wrapper">
-        <h2 class="title">Our Process</h2>
-        <ul>
-            <li>
-                <div class="stages">
-                    <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/research_icon.png" alt="" title=""/>
-                    <h3>Research</h3>
-                </div>
-                <hr class="process_sep"/>
-            </li>
-            <li>
-                <div class="stages">
-                    <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/design_icon.png" alt="" title=""/>
-                    <h3>Research</h3>
-                </div>
-                <hr class="process_sep"/>
-            </li>
-            <li>
-                <div class="stages">
-                    <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/develop_icon.png" alt="" title=""/>
-                    <h3>Research</h3>
-                </div>
-                <hr class="process_sep"/>
-            </li>
-            <li>
-                <div class="stages">
-                    <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/test_icon.png" alt="" title=""/>
-                    <h3>Research</h3>
-                </div>
-                <hr class="process_sep"/>
-            </li>
-            <li>
-                <div class="stages">
-                    <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/launch_icon.png" alt="" title=""/>
-                    <h3>Research</h3>
-                </div>
-            </li>
-        </ul>
+
     </div>
 </section>
 <!--  end process section  -->
@@ -127,8 +104,7 @@
 
 <!--  start call to action section  -->
 <section class="cta">
-    <h4>Geady to talk business!</h4>
-    <a href="#" class="cta_btn">Get In Touch <img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/cta_arrow.png" alt="" title="" class="cta_arrow"/></a>
+
 </section>
 <!--  end call to action section  -->
 
@@ -136,22 +112,7 @@
 <!--  start footer  -->
 <footer>
     <div class="wrapper">
-        <p class="copyrights"> <a href="http://pixelhint.com" target="_blank" class="website">Pixelhint.com</a> All Rights Reserved.</p>
 
-        <ul class="social">
-            <li>
-                <a href="http://www.facebook.com/pixelhint" target="_blank"><img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/fb_icon.png" alt="" title=""></a>
-            </li>
-            <li>
-                <a href="http://www.twitter.com/pixelhint" target="_blank"><img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/twitter_icon.png" alt="" title=""></a>
-            </li>
-            <li>
-                <a href="#" target="_blank"><img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/google_icon.png" alt="" title=""></a>
-            </li>
-            <li>
-                <a href="#" target="_blank"><img src="../../../../../../../../Users/жюба/Desktop/Creativs/img/rss_icon.png" alt="" title=""></a>
-            </li>
-        </ul>
     </div>
 </footer>
 <!--  end footer  -->

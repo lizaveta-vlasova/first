@@ -596,11 +596,11 @@ function changeCLientInformation(clientId) {
     })
 
 }
-function updateClientInformation() {
+function updateClientInformation(clientId) {
     var msg = $('#saveNewClientForm').serialize();
     $.ajax({
         type: 'POST',
-        url: '/adminAccount/updateClientInformation',
+        url: '/adminAccount/updateClientInformation/' + clientId,
         data: msg,
         success: function (data, textStatus) {
             $("#content")[0].innerHTML = data;

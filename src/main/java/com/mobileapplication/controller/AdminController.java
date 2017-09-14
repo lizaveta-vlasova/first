@@ -4,6 +4,8 @@ import com.mobileapplication.domain.*;
 import com.mobileapplication.dto.ClientDTO;
 import com.mobileapplication.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,8 +40,7 @@ public class AdminController {
     @Autowired
     private OrderService orderService;
 
-    @Autowired
-    LoginService loginService;
+    PasswordEncoder passwordEncoder;
 
     @RequestMapping(path = "/adminAccount")
     public String adminAccount() {
@@ -643,6 +644,11 @@ public class AdminController {
     public String addClient(@ModelAttribute("client") Client client,
                             Model model) {
         Client newClient = clientService.saveClient(client);
+        String salt = BCrypt.gensalt();
+        String hashed_password = BCrypt.hashpw(newClient.getPassword(), salt);
+        newClient.setPassword(hashed_password);
+        clientService.updateClientInformation(newClient);
+
         model.addAttribute("clientId", newClient.getId());
         return "admin/partials/chooseTheRoleForNewClient";
         //return "redirect:/adminAccount/clientList";
@@ -726,8 +732,13 @@ public class AdminController {
         return "admin/partials/clientRefactoring";
     }
 
-    @RequestMapping(value = "/adminAccount/updateClientInformation", method = RequestMethod.POST)
-    public String updateClientInformation(@ModelAttribute("client") Client client) {
+    @RequestMapping(value = "/adminAccount/updateClientInformation/{clientId}")
+    public String updateClientInformation(@ModelAttribute("client") Client client,
+                                          @PathVariable ("clientId") Integer clientId) {
+        String salt = BCrypt.gensalt();
+        String hashed_password = BCrypt.hashpw(client.getPassword(), salt);
+        client.setPassword(hashed_password);
+        client.setId(clientId);
         clientService.updateClientInformation(client);
         return "redirect:/adminAccount/clientList";
     }

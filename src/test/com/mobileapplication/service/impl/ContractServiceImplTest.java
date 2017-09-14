@@ -84,25 +84,25 @@ public class ContractServiceImplTest {
     public void testUserBlocked(){
         Contract contract = new Contract();
         contractService.userBlocked(contract);
-        verify(contractDao).save(contract);
+        verify(contractDao).update(contract);
         }
     @Test
     public void testUserUnblocked() throws Exception{
         Contract contract = new Contract();
         contractService.userUnblocked(contract);
-        verify(contractDao).save(contract);
+        verify(contractDao).update(contract);
     }
     @Test
     public void testUserBlockedByAdmin() throws Exception{
         Contract contract = new Contract();
         contractService.userBlockedByAdmin(contract);
-        verify(contractDao).save(contract);
+        verify(contractDao).update(contract);
     }
     @Test
     public void testUserUnlockedByAdmin() throws Exception{
         Contract contract = new Contract();
         contractService.userUnblockedByAdmin(contract);
-        verify(contractDao).save(contract);
+        verify(contractDao).update(contract);
     }
     @Test
     public void testSaveContract() throws Exception{

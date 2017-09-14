@@ -21,7 +21,7 @@
 
 			<nav>
 				<ul>
-					<li><a href="about.html">О компании</a></li>
+					<li><a href="/">О компании</a></li>
 					<li><a href="/services">Сервисы</a></li>
 					<li><a href="work.html">Корпоративным клиентам</a></li>
 					<li><a href="#">Новости</a></li>

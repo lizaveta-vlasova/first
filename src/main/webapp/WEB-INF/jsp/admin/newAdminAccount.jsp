@@ -133,7 +133,7 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <h3 style="font-family: serif; text-align: center">Вы находитесь на странице администратора</h3>
+                    <h3 style="font-family: serif; text-align: center; margin-right: 97px">Вы находитесь на странице администратора</h3>
 
 
                 </div>

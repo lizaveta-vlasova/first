@@ -12,7 +12,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
-                    <button class="btn btn-info" type="submit" value="Сохранить" id="addTariff" style="margin-right: 74%">Отправить</button></div>
+                    <button class="btn btn-info" type="submit" value="Сохранить" id="addTariff" style="margin-right: 83%">Отправить</button></div>
             </div>
         </form>
 </div>

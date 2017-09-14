@@ -4,42 +4,42 @@
 
 <div>
 
-    <form class="form-horizontal" role="form" id="saveNewClientForm" class="contact_form" action="javascript:void(null);" method="post" onsubmit="updateClientInformation()">
+    <form class="form-horizontal" role="form" id="saveNewClientForm" class="contact_form" action="javascript:void(null);" method="post" onsubmit="updateClientInformation(${client.id})">
         <div class="form-group">
             <label for="first_name" class="col-sm-2 control-label">Имя: </label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="${client.first_name}" required autofocus>
+                <input type="text" class="form-control" id="first_name" name="first_name" value="${client.first_name}" required autofocus>
             </div>
         </div>
 
         <div class="form-group">
             <label for="second_name" class="col-sm-2 control-label">Фамилия</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="second_name" name="second_name" placeholder="${client.second_name}" required>
+                <input type="text" class="form-control" id="second_name" name="second_name" value="${client.second_name}" required>
             </div>
         </div>
         <div class="form-group">
             <label for="date_of_birth" class="col-sm-2 control-label">Дата рождения</label>
             <div class="col-sm-4">
-                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="${client.date_of_birth}" required>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="${client.date_of_birth}" required>
             </div>
         </div>
         <div class="form-group">
             <label for="passport_number" class="col-sm-2 control-label">Номер паспорта</label>
             <div class="col-sm-4">
-                <input type="text" minlength="6"  class="form-control" id="passport_number" name="passport_number" placeholder="${client.passport_number}" required>
+                <input type="text" minlength="6"  class="form-control" id="passport_number" name="passport_number" value="${client.passport_number}" required>
             </div>
         </div>
         <div class="form-group">
             <label for="address" class="col-sm-2 control-label">Адрес</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="address" name="address" placeholder="${client.address}" required>
+                <input type="text" class="form-control" id="address" name="address" value="${client.address}" required>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-4">
-                <input type="email" class="form-control" id="email" name="email" placeholder="${client.email}" required>
+                <input type="email" class="form-control" id="email" name="email" value="${client.email}" required>
             </div>
         </div>
         <div class="form-group">

@@ -281,6 +281,7 @@ function sendOrderByAnon() {
                 text: "Менеджер свяжется с Вами в ближайшее время.",
                 type: "success"
             });
+            $(".page_title")[0].innerHTML = data;
         }
     })
 }

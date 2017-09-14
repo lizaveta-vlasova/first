@@ -274,7 +274,7 @@ hr {
       opacity: 1; }
     .sidebar .nav li.active > a,
     .off-canvas-sidebar .nav li.active > a {
-      color: #7A9E9F;
+      color: #000000;
       opacity: 1; }
       .sidebar .nav li.active > a:before,
       .off-canvas-sidebar .nav li.active > a:before {
@@ -336,11 +336,11 @@ hr {
     .sidebar .logo p, .sidebar[data-background-color="white"] .logo p,
     .off-canvas-sidebar .logo p,
     .off-canvas-sidebar[data-background-color="white"] .logo p {
-      color: #66615B; }
+      color: #000000; }
     .sidebar .logo .simple-text, .sidebar[data-background-color="white"] .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text,
     .off-canvas-sidebar[data-background-color="white"] .logo .simple-text {
-      color: #66615B; }
+      color: #000000; }
   .sidebar .nav li:not(.active) > a, .sidebar[data-background-color="white"] .nav li:not(.active) > a,
   .off-canvas-sidebar .nav li:not(.active) > a,
   .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {

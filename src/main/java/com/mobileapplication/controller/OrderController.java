@@ -93,6 +93,6 @@ public class OrderController {
        }
         //orderList.setClient(client);
       //orderService.update(order);
-      return "redirect:/";
+      return "redirect:/order/bucket";
     }
 }

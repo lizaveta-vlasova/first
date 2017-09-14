@@ -62,31 +62,31 @@
                 <li class="active">
                     <a href="/clientAccount/chooseContract">
                         <i class="ti-panel"></i>
-                        <p>Ваши контракты</p>
+                        <p >Ваши контракты</p>
                     </a>
                 </li>
                 <li id="liUserInformation">
                     <a onclick="userInformation(${client.id})" href="javascript:void(0)">
                         <i class="ti-user"></i>
-                        <p id="profile">Профиль</p>
+                        <p id="profile" >Профиль</p>
                     </a>
                 </li>
                 <li id="liBucket">
                     <a onclick="bucket(${client.id})" href="javascript:void(0)">
                         <i class="ti-shopping-cart"></i>
-                        <p id="bucket">Корзина</p>
+                        <p id="bucket" >Корзина</p>
                     </a>
                 </li>
                 <li id="liOrders">
                     <a onclick="orders(${client.id})" href="javascript:void(0)">
                         <i class="ti-layers-alt"></i>
-                        <p id="orders">Заявки</p>
+                        <p id="orders" >Заявки</p>
                     </a>
                 </li>
                 <li id="liLogOut">
                     <a href="<c:url value="/logout" />">
                         <i class="ti-share-alt"></i>
-                        <p>Выйти</p>
+                        <p >Выйти</p>
                     </a>
                 </li>
 
